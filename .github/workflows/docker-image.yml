@@ -18,9 +18,8 @@ jobs:
       env:
         Docker_USER: ${{secrets.Docker_USER}}
         Docker_PASSWORD: ${{secrets.Docker_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: build the docker image
-      run: docker build . --file Dockerfile --tag chamodshehanka/node-test:$(date +%s)
+      run: docker build . --file Dockerfile --tag elyesntc/testtodockerhub:v1
     - name: docker push
-      run: docker push ${{secrets.DOCKER_USER}}/testtodockerhub
+      run: docker push ${{secrets.DOCKER_USER}}/testtodockerhub:v1
