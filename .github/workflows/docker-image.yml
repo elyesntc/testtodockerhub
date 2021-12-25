@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag elyesntc/testtodockerhub, docker push elyesntc/testtodockerhub
+      run: docker build . --file Dockerfile --tag elyesntc/testtodockerhub:v1, docker push elyesntc/testtodockerhub
